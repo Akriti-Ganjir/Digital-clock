@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.hero{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #2a2e39;
+background-image: linear-gradient(43deg, #1d1e22 0%, #11182b 46%, #111e4b 100%);
+
+
+   color: #fff;
+    position: relative;
+}
+.container{
+    width: 700px;
+    height: 200px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* for center */
+    transform: translate(-50%,-50%);
+    
+} 
+.container::before{
+    content: '';
+    width: 160px;
+    height: 160px;
+    background: #f41b75;
+    position: absolute;
+    border-radius: 10px;
+    left: -50px;
+    top: -50px;
+    z-index: -1;
+}
+.container::after{
+    content: '';
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: #331aa1;
+    position: absolute;
+    right: -30px;
+    bottom: -50px;
+     z-index: -1;
+}
+.clock{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(235, 3, 255, 0.11);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    backdrop-filter:blur(50px);
+
+}
+.clock span{
+    font-size: 80px;
+    width: 110px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+
+}
+.clock span::after{
+    font-size: 16px;
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#hrs::after{
+    content: 'HOURS';
+}
+#min::after{
+    content: 'MINS';
+}
+#sec::after{
+    content: 'SEC';
+}
